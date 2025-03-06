@@ -1,0 +1,410 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 162 47% 50%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 162 59% 94%;
+    --secondary-foreground: 162 47% 50%;
+    --muted: 162 4.8% 95.9%;
+    --muted-foreground: 162 3.8% 46.9%;
+    --accent: 162 59% 94%;
+    --accent-foreground: 162 47% 50%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 162 59% 94%;
+    --input: 162 59% 94%;
+    --ring: 162 47% 50%;
+    --radius: 1rem;
+  }
+
+  /* Gold Theme */
+  .theme-gold {
+    --primary: 45 93% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 93% 96%;
+    --secondary-foreground: 45 93% 47%;
+    --muted: 45 10% 95%;
+    --muted-foreground: 45 5% 45%;
+    --accent: 45 93% 96%;
+    --accent-foreground: 45 93% 47%;
+    --border: 45 93% 90%;
+    --input: 45 93% 90%;
+    --ring: 45 93% 47%;
+  }
+
+  /* Violet Theme */
+  .theme-violet {
+    --primary: 270 76% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 70% 96%;
+    --secondary-foreground: 270 76% 53%;
+    --muted: 270 10% 95%;
+    --muted-foreground: 270 5% 45%;
+    --accent: 270 70% 96%;
+    --accent-foreground: 270 76% 53%;
+    --border: 270 70% 90%;
+    --input: 270 70% 90%;
+    --ring: 270 76% 53%;
+  }
+
+  /* Ocean Theme */
+  .theme-ocean {
+    --primary: 200 98% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 98% 95%;
+    --secondary-foreground: 200 98% 39%;
+    --muted: 200 10% 95%;
+    --muted-foreground: 200 5% 45%;
+    --accent: 200 98% 95%;
+    --accent-foreground: 200 98% 39%;
+    --border: 200 98% 90%;
+    --input: 200 98% 90%;
+    --ring: 200 98% 39%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 162 5.9% 95.9%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 162 5.9% 95.9%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 162 5.9% 95.9%;
+    --primary: 162 47% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 162 5.9% 10%;
+    --secondary-foreground: 162 5.9% 95.9%;
+    --muted: 162 3.7% 15.9%;
+    --muted-foreground: 162 5% 64.9%;
+    --accent: 162 3.7% 15.9%;
+    --accent-foreground: 162 5.9% 95.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 162 5.9% 95.9%;
+    --border: 162 3.7% 15.9%;
+    --input: 162 3.7% 15.9%;
+    --ring: 162 47% 50%;
+  }
+
+  /* Dark Gold Theme */
+  .dark.theme-gold {
+    --primary: 45 93% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 30% 15%;
+    --secondary-foreground: 45 93% 90%;
+    --muted: 45 20% 20%;
+    --muted-foreground: 45 10% 70%;
+    --accent: 45 30% 15%;
+    --accent-foreground: 45 93% 90%;
+    --border: 45 30% 15%;
+    --input: 45 30% 15%;
+    --ring: 45 93% 47%;
+  }
+
+  /* Dark Violet Theme */
+  .dark.theme-violet {
+    --primary: 270 76% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 270 70% 90%;
+    --muted: 270 20% 20%;
+    --muted-foreground: 270 10% 70%;
+    --accent: 270 30% 15%;
+    --accent-foreground: 270 70% 90%;
+    --border: 270 30% 15%;
+    --input: 270 30% 15%;
+    --ring: 270 76% 60%;
+  }
+
+  /* Dark Ocean Theme */
+  .dark.theme-ocean {
+    --primary: 200 98% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 30% 15%;
+    --secondary-foreground: 200 98% 90%;
+    --muted: 200 20% 20%;
+    --muted-foreground: 200 10% 70%;
+    --accent: 200 30% 15%;
+    --accent-foreground: 200 98% 90%;
+    --border: 200 30% 15%;
+    --input: 200 30% 15%;
+    --ring: 200 98% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Amiri", "Scheherazade New", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  html {
+    direction: rtl;
+  }
+}
+
+.font-arabic {
+  font-family: "Amiri", "Scheherazade New", "Arial", "Tahoma", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  letter-spacing: 0.5px;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.5);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* Enhanced Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced Gradients */
+.bg-gradient-shimmer {
+  background: linear-gradient(45deg, var(--tw-gradient-from) 0%, var(--tw-gradient-via) 50%, var(--tw-gradient-to) 100%);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Glass Effect */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Enhanced Card Hover Effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Islamic Pattern Background */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2320a090' stroke-opacity='0.1' stroke-width='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Add these new styles */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Update the card background styles */
+.card-gradient {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.dark .card-gradient {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(20, 184, 166, 0.02) 100%);
+}
+
+/* Add smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* New decorative elements */
+.islamic-border {
+  position: relative;
+}
+
+.islamic-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.2), transparent);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Glowing effect for buttons */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Prayer time indicator */
+.prayer-time {
+  position: relative;
+  overflow: hidden;
+}
+
+.prayer-time::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(16, 185, 129, 0.5), transparent);
+  animation: prayer-time-indicator 5s ease-in-out infinite;
+}
+
+@keyframes prayer-time-indicator {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced counter button */
+.counter-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.counter-button:hover::before {
+  opacity: 1;
+}
+
+.counter-button::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.counter-button:hover::after {
+  opacity: 1;
+}
+
